@@ -37,9 +37,9 @@ namespace ColorSpheres
     public class Sphere
     {
 
+        public Color Color { get; private set; }
         public float Radius { get; private set; }
         public int TimesThrown { get; private set; }
-        public Color Color {get; private set;}
 
         public Sphere(Color color, float radius)
         {
