@@ -38,24 +38,24 @@ namespace ColorSpheres
     {
 
         public Color Color { get; private set; }
-        public float Radius { get; private set; }
+        public float Raio { get; private set; }
         public int TimesThrown { get; private set; }
 
-        public Sphere(Color color, float radius)
+        public Sphere(Color color, float raio)
         {
             Color = color;
-            Radius = radius;
+            Raio = raio;
             TimesThrown = 0;
         }
 
         public void Pop()
         {
-            Radius = 0;
+            Raio = 0;
         }
 
         public void Throw()
         {
-            if (Radius > 0)
+            if (Raio > 0)
             {
                 TimesThrown++;
             }
@@ -69,7 +69,7 @@ namespace ColorSpheres
         public void PrintStatus()
         {
             Console.WriteLine($"Cor: ({Color.Red}, {Color.Green}, {Color.Blue}, {Color.Alpha})");
-            Console.WriteLine($"Sphere radius: {Radius}");
+            Console.WriteLine($"Sphere radius: {Raio}");
             Console.WriteLine($"Número de vezes atirada: {TimesThrown}");
         }
     }
