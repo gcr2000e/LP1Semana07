@@ -9,7 +9,6 @@ namespace PlayerStats
         public int playedGames;
         public int wonGames;
         public string playerName;
-        public float winRate;
 
         public Player(string name)
         {
@@ -17,7 +16,6 @@ namespace PlayerStats
             wonGames = 0;
             playedGames = 0;
             highScore = 0.0f;
-            winRate = 0.0f;
         }
 
         public float HighScore
@@ -42,19 +40,7 @@ namespace PlayerStats
 
         public float WinRate
         {
-            get
-            {
-                if (playedGames == 0)
-                {
-                    return 0.0f;
-                }
-                else if(playedGames != 0)
-                {
-                    winRate = wonGames / playedGames;
-                }
-                return winRate;
-
-            }
+            get { return wonGames == 0 ? 0 : (float)wonGames / playedGames;}
         }
 
         public void PlayGame(bool win)
