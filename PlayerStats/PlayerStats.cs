@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Reflection.Metadata.Ecma335;
+using System.Security;
 
 namespace PlayerStats
 {
@@ -40,11 +41,12 @@ namespace PlayerStats
 
         public float WinRate
         {
-            get { return wonGames == 0 ? 0 : (float)wonGames / playedGames;}
+            get { return wonGames == 0 ? 0 : (float)wonGames / playedGames; }
         }
 
         public void PlayGame(bool win)
         {
+            playedGames++;
             if (win)
             {
                 wonGames++;
