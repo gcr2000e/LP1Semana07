@@ -44,7 +44,11 @@ namespace MyRPG
 
             public float Health()
             {
-                return Math.Min(health, Math.Max(0, MaxHealth));
+                if (health > 0 && health <= maxHealth)
+                {
+                    health = maxHealth;
+                }
+                return health;
             }
 
             public float MaxHealth
